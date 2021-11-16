@@ -20,9 +20,10 @@ app.get("/users", (req, res)=>{
    res.send(users);
 });
 
-app.post("/user/create/:nombre", (req, res)=>{
-   users.push(req.body.nombre);
-   res.send("usuario creado");
+app.post("/user/create",(req, res)=>{
+  const { nombre } = req.body;
+  users.push(req.body.nombre);
+  res.send("usuario creado");
 });
 
 app.put('/user/:viejo/:nuevo', (req,res)=>{
